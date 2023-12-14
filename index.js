@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static("./game"));
 
 app.get("/", (_, res) => {
-  res.sendFile(path.join(__dirname, "/game/main.html"));
+  res.redirect("/main.html");
 });
 
 app.listen(3000, () => {
