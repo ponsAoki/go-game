@@ -1,10 +1,12 @@
 const express = require("express");
+const path = require("path");
+
 const app = express();
 
-app.use(express.static("."));
+app.use(express.static("./game"));
 
 app.get("/", (_, res) => {
-  res.redirect("/game/main.html");
+  res.sendFile(path.join(__dirname, "/game/main.html"));
 });
 
 app.listen(3000, () => {
